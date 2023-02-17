@@ -45,6 +45,9 @@ gem "bootsnap", require: false
 # Use mongoid to mongo data base
 gem 'mongoid'
 
+# Use bootstrap
+gem 'bootstrap'
+
 group :development, :test do
   gem 'byebug'
 end
