@@ -1,0 +1,43 @@
+<% if reservation.errors.any? %>
+  <div style="color: red">
+    <h2><%= pluralize reservation.errors.count, 'error' %> prohibited this reservation from being saved:</h2>
+
+    <ul>
+      <% reservation.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with model: reservation, local: true, data: { turbo: false }  do |form| %>
+  <div class="mb-3">
+    <%= form.label :hotel_name, 'Hotel name', class: 'form-label' %>
+    <%= form.text_field :hotel_name, class: 'form-control'  %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :price, 'Price', class: 'form-label' %>
+    <%= form.text_field :price, class: 'form-control'  %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :currency, 'Currency', class: 'form-label' %>
+    <%= form.select :currency, Reservation::CURRENCIES, {}, class: 'form-select' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :entry_date, 'Entry date', class: 'form-label' %>
+    <%= form.date_field :entry_date, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :departure_date, 'Departure date', class: 'form-label' %>
+    <%= form.date_field :departure_date, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :guest_name, 'Guest name', class: 'form-label' %>
+    <%= form.text_field :guest_name, class: 'form-control'  %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :guest_email, 'Guest email', class: 'form-label' %>
+    <%= form.text_field :guest_email, class: 'form-control'  %>
+  </div>
+  <%= form.submit class: 'btn btn-primary' %>
+<% end %>

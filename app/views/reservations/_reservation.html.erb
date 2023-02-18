@@ -1,0 +1,13 @@
+<tr>
+  <td><%= reservation.hotel_name %></td>
+  <td><%= reservation.price %> <%= reservation.currency %></td>
+  <td><%= reservation.entry_date %></td>
+  <td><%= reservation.departure_date %></td>
+  <td><%= reservation.guest_name %></td>
+  <td><%= reservation.guest_email %></td>
+  <td>
+    <%= link_to 'Show', reservation_path(reservation), class: 'btn btn-info btn-sm' %>
+    <%= link_to 'Edit', edit_reservation_path(reservation), class: 'btn btn-primary btn-sm' %>
+    <%= button_to 'Delete', reservation_path(reservation), method: :delete, onclick: "return confirm('Are you sure you want to delete this reservation?')", class: 'btn btn-danger btn-sm', form_class: 'd-inline' %>
+  </td>
+</tr>

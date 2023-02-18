@@ -1,0 +1,15 @@
+<div class="row align-items-center justify-content-between my-4">
+  <div class="col-3">
+    <h5 class="mb-0">Edit reservation</h5>
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
+    <%= render 'form', reservation: @reservation %>
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col">
+    <%= link_to 'Back to the list', reservations_path %>
+  </div>
+</div>
