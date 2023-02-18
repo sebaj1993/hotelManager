@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## HotelManager
 
-Things you may want to cover:
+* Ruby version: 
+    ruby 3.1.2
 
-* Ruby version
+* Configuration:
+  - mongoid was configured so that when it doesn't find a document it doesn't raise an error
 
-* System dependencies
+* Database:
+    This project uses MongoDB as the database and Mongoid as the ORM.
 
-* Configuration
+    * MongoDB version: [6.0.4]
 
-* Database creation
+* Database initialization:
+  - Check that your mongo database is active, you can do this with the command, `sudo systemctl status mongod`
+      if it is not active you can start it with the command `sudo systemctl start mongod`
 
-* Database initialization
+* How to run the test suite:
+    With the command `rails test`
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Deployment instructions:
+    - Install the gems used by the project with the command `bundle install`
+    - Check that your mongo database is active
+    - Run the server with the command `rails server`
